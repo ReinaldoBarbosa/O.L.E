@@ -672,8 +672,16 @@ img
 
     .project__container
     {
-        grid-template-columns: 190px;
+        grid-template-columns: 150px;
+        display: flex;
+        flex-direction: column;
         justify-content: center;
+    }
+
+    .proposals__list,
+    .proposals__item
+    {
+        margin: 2rem;
     }
 
     .footer__content
