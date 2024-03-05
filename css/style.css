@@ -532,6 +532,175 @@ img
     font-style: normal;
 }
 
+/*Form contact*/
+
+
+.form.container
+{
+    position: relative;
+    z-index: 1000;
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px;
+    background: rgba(255,255,255,0.1);
+    box-shadow: 0 25px 45px rgb(0, 0, 0, 0.1);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-right: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(25px);
+    justify-self: center;
+}
+
+.form.container::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -40%;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.05);
+    pointer-events: none;
+    transform: skewX(-15deg);
+}
+
+.form.container h2
+{
+    width: 100%;
+    text-align: center;
+    color: rgb(255, 251, 0);
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.form.container p
+{
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.form.container .row100
+{
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+}
+
+.form.container .row100 .col
+{
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+    margin: 30px 0 20px;
+}
+
+.form.container .row100 .col .inputBox
+{
+    position: relative;
+    width: 100%;
+    height: 40px;
+    color: #fff;
+
+}
+
+.form.container .row100 .col .inputBox input,
+.form.container .row100 .col .inputBox .textarea
+{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    box-sizing: none;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    padding: 0 10px;
+    z-index: 1;
+    color: #000;
+}
+
+.form.container .row100 .col .inputBox .text
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 40px;
+    font-size: 18px;
+    padding: 0 10px;
+    display: block;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.form.container .row100 .col .inputBox input:focus + .text,
+.form.container .row100 .col .inputBox input:valid + .text,
+.form.container .row100 .col .inputBox .textarea:focus + .text,
+.form.container .row100 .col .inputBox .textarea:valid + .text
+{ 
+    top: -35px;
+    left: -19px;
+}
+
+.form.container .row100 .col .inputBox .line
+{
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+    border-radius: 2px;
+    pointer-events: none;
+}
+
+.form.container .row100 .col .inputBox input:focus ~ .line,
+.form.container .row100 .col .inputBox input:valid ~ .line
+{
+    height: 100%;
+}
+
+.form.container .row100 .col .inputBox.textarea
+{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding: 10px 0;
+}
+
+.form.container .row100 .col .inputBox .textarea:focus ~ .line,
+.form.container .row100 .col .inputBox .textarea:valid ~ .line
+{
+    height: 100%;
+}
+
+.form.container .row100 .col input[type="submit"]
+{
+    border: none;
+    padding: 10px 40px;
+    cursor: pointer;
+    outline: none;
+    background: #fff;
+    color: #000;
+    font-size: 18px;
+    border-radius: 2px;
+}
+
+@media(max-width:767px)
+{
+
+    .form.container
+    {
+        padding: 20px;
+    }
+}
+
 /*================= FOOTER ====================*/
 
 .footer
@@ -684,9 +853,46 @@ img
         margin: 2rem;
     }
 
-    .footer__content
+    .footer__container
     {
-        grid-template-columns: max-content;
+        grid-template-columns: repeat(1, max-content);
+        justify-content: space-between;
+    }
+}
+@media screen and (max-width: 400px){
+    .container
+    {
+        margin-inline: 1rem;
+    }
+
+    .home__title
+    {
+        font-size: 2rem;
+    }
+
+    .home__buttons{
+        flex-direction: column;
+        row-gap: 1.5rem;
+    }
+
+    .project__container
+    {
+        grid-template-columns: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .proposals__list,
+    .proposals__item
+    {
+        margin: 2rem;
+    }
+
+    .footer__container
+    {
+        grid-template-columns: repeat(1, max-content);
+        justify-content: space-between;
     }
 }
 
@@ -711,6 +917,8 @@ img
     {
         grid-template-columns: repeat(3, max-content);
     }
+
+    
 }    
 
 @media screen and (min-width: 768px){
@@ -924,7 +1132,7 @@ img
 
     .contact__img
     {
-        width: 480px;
+        width: 430px;
     }
 
     .footer__logo
