@@ -454,6 +454,7 @@ img
 {
     transform: translateY(-.5rem);
 }
+
 /*================= PROPOSALS ====================*/
 .proposals__container
 {
@@ -485,6 +486,45 @@ img
 {
     font-size: 1.5rem;
     color: var(--first-color);
+}
+
+/*================= FINANCES ====================*/
+.finances__container
+{
+    padding-top: 2rem;
+    row-gap: 2rem;
+}
+
+.finances__img
+{
+    width: 270px;
+    filter: drop-shadow(var(--shadow-img));
+    justify-self: center;
+}
+
+.finances__list
+{
+    display: grid;
+    row-gap: 1em;
+}
+
+.finances__item
+{
+    display: flex;
+    column-gap: .5rem;
+    align-items: flex-start;
+}
+
+.finances__item i
+{
+    font-size: 1.5rem;
+    color: var(--first-color-alt);
+}
+
+.finances__list.two .finances__item i
+{
+    font-size: 1.5rem;
+    color: #b22525;
 }
 
 /*================= CONTACT ====================*/
@@ -854,7 +894,9 @@ img
     }
 
     .proposals__list,
-    .proposals__item
+    .proposals__item,
+    .finances__list,
+    .finances__item
     {
         margin: 2rem;
     }
@@ -865,6 +907,7 @@ img
         justify-content: space-between;
     }
 }
+
 @media screen and (max-width: 400px){
     .container
     {
@@ -890,7 +933,9 @@ img
     }
 
     .proposals__list,
-    .proposals__item
+    .proposals__item,
+    .finances__list,
+    .finances__item
     {
         margin: 2rem;
     }
@@ -1111,6 +1156,24 @@ img
     }
 
     .proposals__list
+    {
+        row-gap: 1.5rem;
+    }
+
+    .finances__container
+    {
+        grid-template-columns: 480px 385px;
+        align-items: center;
+        column-gap: 8rem;
+        padding-top: 3rem;
+    }
+
+    .finances__img
+    {
+        width: 480px;
+    }
+
+    .finances__list,
     {
         row-gap: 1.5rem;
     }
